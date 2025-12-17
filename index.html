@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sejal Jain | B2B Sales & Marketing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+    a { color: #38bdf8; text-decoration: none; }
+    section { padding: 80px 10%; }
+    h1, h2, h3 { color: #f8fafc; }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+    }
+    .hero h1 { font-size: 3rem; }
+    .hero p { max-width: 600px; font-size: 1.1rem; }
+    .cta a {
+      display: inline-block;
+      margin-right: 15px;
+      margin-top: 20px;
+      padding: 12px 22px;
+      border-radius: 8px;
+      background: #38bdf8;
+      color: #020617;
+      font-weight: 600;
+    }
+
+    /* Tabs */
+    .tabs { margin-top: 40px; }
+    .tab-buttons button {
+      background: transparent;
+      border: 1px solid #334155;
+      color: #e5e7eb;
+      padding: 10px 16px;
+      margin-right: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .tab-buttons button.active { background: #38bdf8; color: #020617; }
+    .tab-content { margin-top: 20px; display: none; }
+    .tab-content.active { display: block; }
+
+    /* Timeline */
+    .timeline-item { margin-bottom: 30px; }
+    .timeline-item span { color: #38bdf8; font-weight: 600; }
+
+    /* Skills */
+    .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+    .skill-card {
+      padding: 20px;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      background: #020617;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px;
+      border-top: 1px solid #334155;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero" style="display:grid;grid-template-columns:1fr 320px;align-items:center;gap:60px;">
+    <div>
+    <h1>Hi, I’m Sejal Jain 👋</h1>
+    <p>
+      I work at the intersection of <strong>B2B Sales, Marketing & Analytics</strong> — turning markets, data and conversations into measurable business growth.
+    </p>
+    <div class="cta">
+      <a href="#journey">Explore My Journey</a>
+      <a href="#contact">Let’s Work Together</a>
+    </div>
+
+    <!-- Tabs -->
+
+    <div class="tabs">
+      <div class="tab-buttons">
+        <button class="active" onclick="openTab(event, 'pro')">The Professional</button>
+        <button onclick="openTab(event, 'analyst')">The Analyst</button>
+        <button onclick="openTab(event, 'marketer')">The Marketer</button>
+        <button onclick="openTab(event, 'creative')">The Creative</button>
+      </div>
+      <div id="pro" class="tab-content active">
+        <p>Deputy Manager at Adani Cement managing 11 regions, key distributors and institutional clients.</p>
+      </div>
+      <div id="analyst" class="tab-content">
+        <p>Marketing & analytics background with strong data-driven decision making.</p>
+      </div>
+      <div id="marketer" class="tab-content">
+        <p>Experienced in GTM strategy, customer insights and growth initiatives.</p>
+      </div>
+      <div id="creative" class="tab-content">
+        <p>Runs a creative Instagram page (@artwhaaat) focused on visual storytelling.</p>
+      </div>
+    </div>
+    </div>
+  <div style="text-align:center;">
+    <img src="sejal.jpg" alt="Sejal Jain" style="width:260px;height:260px;object-fit:cover;border-radius:50%;border:4px solid #38bdf8;" />
+    <p style="margin-top:12px;color:#94a3b8;font-size:0.9rem;">B2B Sales • Marketing • Analytics</p>
+  </div>
+</section>
+
+  <!-- Journey -->
+  <section id="journey">
+    <h2>My Journey</h2>
+    <div class="timeline-item">
+      <span>2023–2024</span>
+      <p>PGDM in Marketing & Analytics, IMI New Delhi</p>
+    </div>
+    <div class="timeline-item">
+      <span>2022–2023</span>
+      <p>Deputy Manager – B2B Sales, Adani Cement (Vidarbha – 11 regions)</p>
+    </div>
+    <div class="timeline-item">
+      <span>2021–2022</span>
+      <p>Assistant System Engineer, TCS</p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section>
+    <h2>What I’m Good At</h2>
+    <div class="skills">
+      <div class="skill-card">B2B Sales & Key Accounts</div>
+      <div class="skill-card">Client Retention & Growth</div>
+      <div class="skill-card">Marketing Analytics</div>
+      <div class="skill-card">Territory & Market Management</div>
+      <div class="skill-card">Digital Marketing</div>
+      <div class="skill-card">Project Management</div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Let’s Talk</h2>
+    <p>If this felt more interesting than a PDF resume, we should connect.</p>
+    <p>Email: yourname@email.com | LinkedIn: linkedin.com/in/yourprofile</p>
+  </section>
+
+  <footer>
+    Still scrolling? That’s my retention strategy working 😉
+  </footer>
+
+  <script>
+    function openTab(evt, tabId) {
+      const contents = document.querySelectorAll('.tab-content');
+      const buttons = document.querySelectorAll('.tab-buttons button');
+      contents.forEach(c => c.classList.remove('active'));
+      buttons.forEach(b => b.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      evt.target.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
