@@ -12,11 +12,11 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Inter', sans-serif;
-      background: #0f172a;
+      background: linear-gradient(180deg, #0f172a, #020617);
       color: #e5e7eb;
       line-height: 1.6;
     }
-    a { color: #38bdf8; text-decoration: none; }
+    a { color: #22d3ee; text-decoration: none; font-weight: 600; }
 
     section { padding: 56px 6%; }
     h1, h2 { color: #f8fafc; }
@@ -28,6 +28,7 @@
        HERO (MOBILE-FIRST)
        ========================= */
     .hero {
+      background: radial-gradient(circle at top right, rgba(34,211,238,0.15), transparent 40%);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -46,6 +47,10 @@
     }
 
     .hero-quote {
+      background: linear-gradient(90deg, #22d3ee, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 600;
       font-style: italic;
       font-size: 0.9rem;
       color: #e5e7eb;
@@ -110,6 +115,12 @@
       border-radius: 14px;
       background: #020617;
       font-size: 0.9rem;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .skill-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(34,211,238,0.15);
+    }
     }
 
     /* =========================
@@ -145,6 +156,34 @@
         grid-template-columns: repeat(3, 1fr);
       }
     }
+      
+    /* Sticky Mobile Contact Button */
+    .sticky-contact {
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      z-index: 999;
+      background: linear-gradient(90deg, #22d3ee, #a78bfa);
+      color: #020617;
+      padding: 14px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    @media (min-width: 768px) {
+      .sticky-contact { display: none; }
+    }
+
+    /* Scroll animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 <body>
@@ -154,9 +193,11 @@
     <div>
       <h1>Hi, I’m Sejal Jain 👋</h1>
       <p>
-        I work at the intersection of <strong>B2B Sales, Marketing & Analytics</strong> — turning markets, data and conversations into measurable business growth.
+        I work at the intersection of <strong>B2B Sales, Marketing & Analytics</strong> - turning markets, data and conversations into measurable business growth.
       </p>
       <div class="cta">
+        <a href="#journey">Explore My Journey</a>
+        <a href="resume.pdf" download>Download Resume</a>
         <a href="#journey">Explore My Journey</a>
         <a href="#contact">Let’s Work Together</a>
       </div>
@@ -172,7 +213,7 @@
           <p>Deputy Manager at Adani Cement managing 11 regions and institutional clients.</p>
         </div>
         <div id="analyst" class="tab-content">
-          <p>Marketing & analytics background with data-driven decision-making.</p>
+          <p>Marketing & Analytics background with data-driven decision-making.</p>
         </div>
         <div id="marketer" class="tab-content">
           <p>Hands-on experience in GTM strategy and growth initiatives.</p>
@@ -186,19 +227,35 @@
     <div style="text-align:center;">
       <img src="sejal.jpg" alt="Sejal Jain" />
       <p class="hero-quote">“From insight to on-ground impact.”</p>
+      <p style="margin-top:8px;font-size:0.85rem;">
+        <a href="https://instagram.com/artwhaaat" target="_blank">@artwhaaat</a> · visual storytelling
+      </p>
     </div>
   </section>
 
   <!-- JOURNEY -->
-  <section id="journey">
+  <section id="journey" class="reveal">
     <h2>My Journey</h2>
-    <div class="timeline-item"><span>2023–2024</span><p>PGDM – Marketing & Analytics, IMI New Delhi</p></div>
-    <div class="timeline-item"><span>2022–2023</span><p>Deputy Manager – B2B Sales, Adani Cement</p></div>
+    <div class="timeline-item"><span>2024-Present</span><p>Deputy Manager – B2B Sales, Adani Cement</p></div>
+    <div class="timeline-item"><span>2022–2024</span><p>PGDM – Marketing & Analytics, IMI New Delhi</p></div>
     <div class="timeline-item"><span>2021–2022</span><p>Assistant System Engineer, TCS</p></div>
   </section>
 
   <!-- SKILLS -->
-  <section>
+  <section class="reveal">
+    <h2>Why Hire Me?</h2>
+    <p>
+      I bring together <strong>on-ground sales execution</strong>, <strong>marketing strategy</strong>, and <strong>analytics-driven thinking</strong>. 
+      Having worked across tech, FMCG-style distribution, and institutional B2B sales, I don’t just suggest ideas - I execute them.
+    </p>
+    <ul style="margin-top:16px;line-height:1.8;">
+      <li>✔ Managed multi-region B2B operations with real revenue responsibility</li>
+      <li>✔ Strong analytical foundation to back decisions with data</li>
+      <li>✔ Relationship-driven, but performance-focused</li>
+    </ul>
+  </section>
+
+  <section class="reveal">
     <h2>What I’m Good At</h2>
     <div class="skills">
       <div class="skill-card">B2B Sales & Key Accounts</div>
@@ -214,8 +271,13 @@
   <section id="contact">
     <h2>Let’s Talk</h2>
     <p>If this felt more interesting than a PDF resume, we should connect.</p>
-    <p>Email: jain9sejal@gmail.com · LinkedIn: https://www.linkedin.com/in/sejal09jain/</p>
+    <p style="margin-top:10px;">
+      📧 <a href="mailto:jain9sejal@gmail.com">jain9sejal@gmail.com</a><br/>
+      💼 <a href="https://www.linkedin.com/in/sejal09jain/" target="_blank">LinkedIn / sejal09jain</a>
+    </p>
   </section>
+
+  <a href="#contact" class="sticky-contact">Contact Me</a>
 
   <footer>
     Still scrolling? That’s my retention strategy working 😉
@@ -228,6 +290,14 @@
       document.getElementById(tabId).classList.add('active');
       evt.target.classList.add('active');
     }
+    
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('active');
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(r => observer.observe(r));
   </script>
 
 </body>
