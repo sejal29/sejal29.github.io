@@ -73,6 +73,40 @@
       border-top: 1px solid #334155;
       color: #94a3b8;
     }
+      
+    /* Responsive */
+    @media (max-width: 768px) {
+      section { padding: 60px 6%; }
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero h1 { font-size: 2.2rem; }
+      .cta a {
+        display: block;
+        margin: 12px auto 0;
+        width: fit-content;
+      }
+      .tab-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+      }
+      .tab-buttons button {
+        margin-right: 0;
+      }
+      img {
+        width: 200px !important;
+        height: 200px !important;
+        margin-top: 30px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 1.9rem; }
+      p { font-size: 0.95rem; }
+    }
   </style>
 </head>
 <body>
@@ -115,6 +149,7 @@
   <div style="text-align:center;">
     <img src="sejal.jpg" alt="Sejal Jain" style="width:260px;height:260px;object-fit:cover;border-radius:50%;border:4px solid #38bdf8;" />
     <p style="margin-top:12px;color:#94a3b8;font-size:0.9rem;">B2B Sales • Marketing • Analytics</p>
+    <p style="margin-top:6px;font-size:0.95rem;font-style:italic;color:#e5e7eb;">"From insight to on-ground impact."</p>
   </div>
 </section>
 
@@ -152,7 +187,7 @@
   <section id="contact">
     <h2>Let’s Talk</h2>
     <p>If this felt more interesting than a PDF resume, we should connect.</p>
-    <p>Email: yourname@email.com | LinkedIn: linkedin.com/in/yourprofile</p>
+    <p>Email: jain9sejal@gmail.com | LinkedIn: https://www.linkedin.com/in/sejal09jain/</p>
   </section>
 
   <footer>
